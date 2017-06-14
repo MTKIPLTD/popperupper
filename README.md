@@ -10,7 +10,7 @@ Run `npm install` and you should be ready to use the widget code as follows
   <body>
     <h1>Example page</h1>
     <p>Some content appearing before the button</p>
-    <script async src="./widget.js"></script>
+    <script async src="./widget.js" data-url="http://url-of.widget/?andany=parameters"></script>
     <p>Some content appearing after the button</p>
   </body>
 </html>

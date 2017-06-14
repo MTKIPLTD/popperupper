@@ -3,12 +3,16 @@ import { iframeResizer } from 'iframe-resizer';
 import 'tingle.js/dist/tingle.css';
 import './style.css';
 
+// Find script
+const script = document.currentScript;
+const url = script.getAttribute('data-url') || '';
+
 // Create modal
 const modal = new tingle.modal({
   closeMethods: [],
   cssClass: ['mtk-widget'],
 });
-modal.setContent('<iframe src="http://localhost:8000" style="width: 100%"></iframe>');
+modal.setContent(`<iframe src="${url}" style="width: 100%"></iframe>`);
 
 // Set up iframe resizer
 iframeResizer({
@@ -30,5 +34,4 @@ button.onclick = function handleButtonClick() {
 };
 
 // Add button to the page
-const script = document.currentScript;
 script.parentNode.insertBefore(button, script);
