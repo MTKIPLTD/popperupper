@@ -31,10 +31,12 @@
   background: rgba(0, 0, 0, .8);
   opacity: 0;
   transition: transform .2s ease;
-}
 
-/* modal
--------------------------------------------------------------- */
+  @media (--mobile) {
+    display: block;
+    width: 100%;
+  }
+}
 
 .tingle-modal-box {
   position: relative;
@@ -46,6 +48,11 @@
   opacity: 1;
   transition: transform .3s cubic-bezier(.175, .885, .32, 1.275);
   transform: scale(.8);
+
+  @media (--mobile) {
+    display: block;
+    width: auto;
+  }
 }
 
 /* state
@@ -76,22 +83,8 @@
 .tingle-modal--overflow {
   overflow-y: scroll;
   padding-top: 8vh;
-}
 
-/* responsive
--------------------------------------------------------------- */
-
-@media (--mobile) {
-  .tingle-modal-box {
-    width: auto;
-  }
-
-  .tingle-modal {
-    display: block;
-    width: 100%;
-  }
-
-  .tingle-modal--overflow {
+  @media (--mobile) {
     padding: 0;
   }
 }
