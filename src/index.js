@@ -15,7 +15,6 @@ iframeResizer({
   minHeight: 200,
   checkOrigin: false,
   heightCalculationMethod: 'taggedElement',
-  resizedCallback: console.log,
   messageCallback: ({ iframe, message }) => {
     if (message === 'MTK_SB_CLOSE') {
       modal.close();
