@@ -1,11 +1,113 @@
-.mtk-widget .tingle-modal-box {
-  width: 80%;
+@custom-media --mobile (width < 768px);
+
+.mtk-widget.tingle-modal {
+  & iframe {
+    border: 0;
+    transition: height .2s ease;
+  }
 }
 
-.mtk-widget .tingle-modal-box__content {
-  padding: 0;
+/* ----------------------------------------------------------- */
+/* Simplified vendor CSS */
+/* == tingle v0.11.0 */
+/* ----------------------------------------------------------- */
+
+.tingle-modal * {
+  box-sizing: border-box;
 }
 
-.mtk-widget iframe {
-  border: 0;
+.tingle-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  visibility: hidden;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background: rgba(0, 0, 0, .8);
+  opacity: 0;
+  cursor: pointer;
+  transition: transform .2s ease;
+}
+
+/* modal
+-------------------------------------------------------------- */
+
+.tingle-modal--noOverlayClose {
+  cursor: default;
+}
+
+.tingle-modal--noClose .tingle-modal__close {
+  display: none;
+}
+
+.tingle-modal-box {
+  position: relative;
+  flex-shrink: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 60%;
+  border-radius: 4px;
+  background: #fff;
+  opacity: 1;
+  cursor: auto;
+  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275);
+  transform: scale(.8);
+}
+
+/* state
+-------------------------------------------------------------- */
+
+.tingle-enabled {
+  overflow: hidden;
+  height: 100%;
+}
+
+.tingle-modal--visible .tingle-modal-box__footer {
+  bottom: 0;
+}
+
+.tingle-enabled .tingle-content-wrapper {
+  filter: blur(15px);
+}
+
+.tingle-modal--visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tingle-modal--visible .tingle-modal-box {
+  transform: scale(1);
+}
+
+.tingle-modal--overflow {
+  overflow-y: scroll;
+  padding-top: 8vh;
+}
+
+/* responsive
+-------------------------------------------------------------- */
+
+@media (--mobile) {
+  .tingle-modal-box {
+    width: auto;
+    border-radius: 0;
+  }
+
+  .tingle-modal {
+    display: block;
+    width: 100%;
+  }
+
+  .tingle-modal--noClose {
+    top: 0;
+  }
+
+  .tingle-modal--overflow {
+    padding: 0;
+  }
 }

@@ -1,6 +1,5 @@
 import tingle from 'tingle.js';
 import { iframeResizer } from 'iframe-resizer';
-import 'tingle.js/dist/tingle.css';
 import './style.css';
 
 // Find script
