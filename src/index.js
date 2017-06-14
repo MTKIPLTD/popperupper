@@ -7,12 +7,15 @@ import './style.css';
 const script = document.currentScript;
 const url = script.getAttribute('data-url') || '';
 
+// Generate id for this modal
+const id = `widget-${Date.now()}`;
+
 // Create modal
 const modal = new tingle.modal({
   closeMethods: [],
   cssClass: ['mtk-widget'],
 });
-modal.setContent(`<iframe src="${url}" style="width: 100%"></iframe>`);
+modal.setContent(`<iframe id="${id}" src="${url}" style="width: 100%"></iframe>`);
 
 // Set up iframe resizer
 iframeResizer({
@@ -24,12 +27,12 @@ iframeResizer({
       modal.close();
     }
   },
-});
+}, `#${id}`);
 
 // Create button
 const button = document.createElement('button');
 button.innerText = 'Open widget';
-button.onclick = function handleButtonClick() {
+button.onclick = () => {
   modal.open();
 };
 

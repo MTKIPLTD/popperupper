@@ -5,7 +5,7 @@ import postcss from 'rollup-plugin-postcss';
 
 export default {
   entry: 'src/index.js',
-  format: 'cjs',
+  format: 'iife',
   plugins: [
     resolve(),
     commonjs({
