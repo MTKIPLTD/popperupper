@@ -4,7 +4,10 @@ import './style.css';
 
 // Find script
 const script = document.currentScript;
+
+// Extract parameters
 const url = script.getAttribute('data-url') || '';
+const buttonLabel = script.getAttribute('data-label') || 'Open widget';
 
 // Generate id for this modal
 const id = `widget-${Date.now()}`;
@@ -21,7 +24,7 @@ iframeResizer({
   minHeight: 200,
   checkOrigin: false,
   heightCalculationMethod: 'taggedElement',
-  messageCallback: ({ iframe, message }) => {
+  messageCallback: ({ message }) => {
     if (message === 'MTK_SB_CLOSE') {
       modal.close();
     }
@@ -30,7 +33,7 @@ iframeResizer({
 
 // Create button
 const button = document.createElement('button');
-button.innerText = 'Open widget';
+button.innerText = buttonLabel;
 button.onclick = () => {
   modal.open();
 };
