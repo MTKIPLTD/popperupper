@@ -30,20 +30,11 @@
   overflow: hidden;
   background: rgba(0, 0, 0, .8);
   opacity: 0;
-  cursor: pointer;
   transition: transform .2s ease;
 }
 
 /* modal
 -------------------------------------------------------------- */
-
-.tingle-modal--noOverlayClose {
-  cursor: default;
-}
-
-.tingle-modal--noClose .tingle-modal__close {
-  display: none;
-}
 
 .tingle-modal-box {
   position: relative;
@@ -51,10 +42,8 @@
   margin-top: auto;
   margin-bottom: auto;
   width: 60%;
-  border-radius: 4px;
   background: #fff;
   opacity: 1;
-  cursor: auto;
   transition: transform .3s cubic-bezier(.175, .885, .32, 1.275);
   transform: scale(.8);
 }
@@ -67,7 +56,7 @@
   height: 100%;
 }
 
-.tingle-modal--visible .tingle-modal-box__footer {
+.tingle-modal--visible {
   bottom: 0;
 }
 
@@ -95,16 +84,11 @@
 @media (--mobile) {
   .tingle-modal-box {
     width: auto;
-    border-radius: 0;
   }
 
   .tingle-modal {
     display: block;
     width: 100%;
-  }
-
-  .tingle-modal--noClose {
-    top: 0;
   }
 
   .tingle-modal--overflow {
