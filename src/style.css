@@ -1,0 +1,11 @@
+.mtk-widget .tingle-modal-box {
+  width: 80%;
+}
+
+.mtk-widget .tingle-modal-box__content {
+  padding: 0;
+}
+
+.mtk-widget iframe {
+  border: 0;
+}
