@@ -25,6 +25,9 @@ iframeResizer({
   checkOrigin: false,
   heightCalculationMethod: 'taggedElement',
   resizeFrom: 'child',
+  resizedCallback: () => {
+    modal.checkOverflow();
+  },
   messageCallback: ({ message }) => {
     if (message === 'MTK_SB_CLOSE') {
       modal.close();

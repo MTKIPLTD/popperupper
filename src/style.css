@@ -83,6 +83,7 @@
 .tingle-modal--overflow {
   overflow-y: scroll;
   padding-top: 8vh;
+  padding-bottom: 8vh;
 
   @media (--mobile) {
     padding: 0;
