@@ -1,7 +1,7 @@
 {
   "name": "widget",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "dependencies": {
     "iframe-resizer": "^3.5.14",
