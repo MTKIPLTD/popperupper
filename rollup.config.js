@@ -10,7 +10,7 @@ export default [
     format: 'iife',
     plugins: [
       resolve(),
-commonjs({ namedExports: { 'iframe-resizer': [ 'iframeResizer' ] } }),
+      commonjs({ namedExports: { 'iframe-resizer': [ 'iframeResizer' ] } }),
       babel({ include: 'src/**/*.js' }),
       postcss({ plugins: [cssnext()] }),
     ],
