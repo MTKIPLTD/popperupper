@@ -44,7 +44,7 @@ The resize logic will look for an element with the tag `[data-iframe-height]` an
 You can close the modal window from the application by dispatching the following message
 
 ```javascript
-window.parentIFrame.sendMessage('MTK_SB_CLOSE');
+window.parentIFrame.sendMessage('POPPERUPPER_CLOSE');
 ```
 
 In TypeScript you may need to replace `window` with `(<any>window)` for it to allow `parentIFrame`.

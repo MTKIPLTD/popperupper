@@ -27,7 +27,7 @@ export default function generateModal(url) {
         modal.checkOverflow();
       },
       messageCallback: ({ message }) => {
-        if (message === 'MTK_SB_CLOSE') {
+        if (message === 'POPPERUPPER_CLOSE') {
           modal.close();
         }
       },
