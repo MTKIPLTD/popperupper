@@ -4,13 +4,13 @@ import './style.css';
 
 export default function generateModal(url) {
   // Generate id for this modal
-  const id = `widget-${Date.now()}`;
+  const id = `popperupper-${Date.now()}`;
 
   // Create modal
   const Modal = tingle.modal;
   const modal = new Modal({
     closeMethods: [],
-    cssClass: ['mtk-widget'],
+    cssClass: ['popperupper'],
   });
   modal.setContent(
     `<iframe id="${id}" src="${url}" style="width: 100%"></iframe>`,

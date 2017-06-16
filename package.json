@@ -1,5 +1,5 @@
 {
-  "name": "widget",
+  "name": "popperupper",
   "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
@@ -25,6 +25,7 @@
     "rollup-plugin-postcss": "^0.5.3"
   },
   "scripts": {
+    "prepublish": "npm run build",
     "postinstall": "npm run build",
     "build": "rollup -c",
     "precommit": "lint-staged"

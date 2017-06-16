@@ -1,20 +1,30 @@
-# Widget Mounter
+# popperupper
 
-This is a small project to add a button widget to any page. When pressed, the widget launches an app in a modal iframe.
+This is a small project to add a button to any page that launches an app in a modal iframe.
+
+## Development
+Run `npm install` before using the code from source.
 
 ## Usage
-Run `npm install` and you should be ready to use the widget code as follows
-
 ```html
 <html>
   <body>
     <h1>Example page</h1>
     <p>Some content appearing before the button</p>
-    <script async src="./widget.js" data-url="http://url-of.widget/?andany=parameters"></script>
+    <script async src="./popperupper.js" data-url="http://url-of.app/?andany=parameters"></script>
     <p>Some content appearing after the button</p>
   </body>
 </html>
 ```
+
+### Options
+Options can be specified as data attributes on the script element.
+
+| Attribute | Description | Default |
+| --- | --- | --- |
+| data-url | URL of the app to load in the iframe | '' |
+| data-label | Label of the button | 'Launch external application' |
+| data-class | Space separated classes to be applied to the button | '' |
 
 ## Controlling the modal with the app
 

@@ -6,25 +6,25 @@ import cssnext from 'postcss-cssnext';
 
 export default [
   {
-    entry: 'src/widget.js',
+    entry: 'src/popperupper.js',
     format: 'iife',
     plugins: [
       resolve(),
-      commonjs({ namedExports: { 'iframe-resizer': [ 'iframeResizer' ] } }),
+      commonjs({ namedExports: { 'iframe-resizer': ['iframeResizer'] } }),
       babel({ include: 'src/**/*.js' }),
       postcss({ plugins: [cssnext()] }),
     ],
-    dest: 'dist/widget.js',
+    dest: 'dist/popperupper.js',
   },
   {
     entry: 'src/index.js',
     format: 'cjs',
     plugins: [
       resolve(),
-      commonjs({ namedExports: { 'iframe-resizer': [ 'iframeResizer' ] } }),
+      commonjs({ namedExports: { 'iframe-resizer': ['iframeResizer'] } }),
       babel({ include: 'src/**/*.js' }),
       postcss({ plugins: [cssnext()] }),
     ],
-    dest: 'dist/index.js'
+    dest: 'dist/index.js',
   },
 ];
