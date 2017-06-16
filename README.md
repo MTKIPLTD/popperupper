@@ -3,7 +3,7 @@
 This is a small project to add a button to any page that launches an app in a modal iframe.
 
 ## Development
-Run `npm install` before using the code from source.
+Run `npm install` and `npm run build` before using the code from source.
 
 ## Usage
 ```html
