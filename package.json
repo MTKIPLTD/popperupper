@@ -7,6 +7,7 @@
     "iframe-resizer": "^3.5.14",
     "tingle.js": "^0.11.0"
   },
+  "repository": "Motortrak/popperupper",
   "devDependencies": {
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-latest": "^6.24.1",
