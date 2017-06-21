@@ -1,3 +1,4 @@
+/* eslint-env browser */
 import tingle from 'tingle.js';
 import { iframeResizer } from 'iframe-resizer';
 import './style.css';
@@ -23,7 +24,11 @@ export default function generateModal(url) {
       checkOrigin: false,
       heightCalculationMethod: 'taggedElement',
       resizeFrom: 'child',
-      resizedCallback: () => {
+      resizedCallback: ({ iframe }) => {
+        const mobile = !!window.matchMedia('(max-width: 768px)').matches;
+        const message = mobile ? 'POPPERUPPER_MOBILE' : 'POPPUERUPPER_DESKTOP';
+        iframe.iFrameResizer.sendMessage(message);
+
         modal.checkOverflow();
       },
       messageCallback: ({ message }) => {
