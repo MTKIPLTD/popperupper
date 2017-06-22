@@ -31,9 +31,11 @@ export default function generateModal(url) {
 
         modal.checkOverflow();
       },
-      messageCallback: ({ message }) => {
+      messageCallback: ({ iframe, message }) => {
         if (message === 'POPPERUPPER_CLOSE') {
           modal.close();
+          // Reload
+          iframe.src += ''; // eslint-disable-line no-param-reassign
         }
       },
     },
